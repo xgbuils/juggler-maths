@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>MathJax TeX Test Page</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+<body>
+  <header>
+    <h1>Títol a posar ...</h1>
+  </header>
+  <section>
+    <div class="macros">
+      \(
+        \def \Nat {\mathbb{N}}
+      \)
+    </div>
+    <article id="def_001">
+      <h2>Definició 1:</h2>
+      <p>
+        Donat $n \in \Nat$ definim el <strong>conjunt de patrons vàlids</strong> $P_n$ de la següent manera:
+        $$P_n = \{ x \in \Nat^n : \forall{i, j \in \{0..n-1\} ( \exists{q \in \Nat, r \in \{0..n-1\}^n (x_i + i = nq + r_i} \land ( r_i = r_j \implies i = j) ) } \} $$
+      </p>
+    </article>
+    <article id="def_002">
+      <h2>Definició 2:</h2>
+      <p>
+        Donat $n \in \Nat$ definim la <strong>funció normalitzadora de patrons de periode n</strong> $\phi_n : \Nat^n \to \{0..n-1\}^n $ de la següent manera:
+        $$\phi_n(x) = r : \forall{i \in \{0..n-1\} (\exists { q \in \Nat (x_i + i = qn + r_i )} ) } $$
+      </p>
+    </article>
+    <article "def_003">
+      <h2>Definició 3:</h2>
+      <p>
+        Donat $n \in \Nat$ definim $S_n$ com el conjunt de permutacions $f: \{0..n-1\} \to \{0..n-1\}.$  
+      </p>
+    </article>
+    <article "def_004">
+      <h2>Definició 4:</h2>
+      <p>
+        Donat $n \in \Nat$ definim el <strong>conjunt de tuples de període $n$ sense repeticions</strong> $S'_n$ de la següent manera:
+        $$S'_n = \{x \in \Nat^n : \forall i, j \in \{0..n-1\} (x_i = x_j \implies i = j) \}$$  
+      </p>
+    </article>
+    <article>
+      <h2>Lema:</h2>
+      <p>
+        Sigui $\phi_n(P_n)$ la imatge de $P_n$ sobre $\phi_n$. Existeix $f: \phi_n(P_n) \to {S'}_n$ tal que  $f$ es bijectiva.
+      </p>
+      <h2>Demostració 1:</h2>
+      <p>
+        --en obres!!--
+        Tenim que:
+        $$\phi_n(P_n) = {y \in {0..n-1}^n : x \in P_n \land \phi_n(x) = y }$$
+      </p>
+      <p>
+        
+          linea de la demostració que estic pensant: 1) Demostrar que $\phi_n(P_n) = {S'}_n$. I després dir que entre conjunts iguals, existeix la funció bijectiva identitat, per tant el teorema és cert
+      </p>
+      <p>
+        Per la definició <a href="#def_001">1</a> i <a href="#def_002">2</a>:
+        $$\phi_n(P_n) = {y \in {0..n-1}^n : ( x \in \Nat^n : \forall{i, j \in \{0..n-1\} ( \exists{q \in \Nat, r \in \{0..n-1\}^n (x_i + i = nq + r_i} \land ( r_i = r_j \implies i = j) ) } \} ) \land (\forall{i \in \{0..n-1\} (\exists { q \in \Nat (x_i + i = qn + r_i )} ) }) }$$
+        --uff! quin conjunt més lleig, potser per demostració de que $\phi_n(P_n)$ conté a ${S'}_n$ i inversament es pugui fer una demostració més neta--
+      </p>      
+    </article>
+  </section>
+</body>
+</html>
