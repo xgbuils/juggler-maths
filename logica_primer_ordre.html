@@ -26,46 +26,47 @@
   </header>
   <div class="macros">
   </div>
-  <section>
-    <article id="rule_001">
+  <ol>
+    <li id="rule_001">
       <h2>Regles distributives entre quantificadors i connectives</h2>
       <ol>
-        <li>
+        <li id="rule_01_01">
         $p(y) \land \Forall{x \in X}{q(x)} \equiv \Forall{x \in X}{p(y) \land q(x)}$, sempre que $X \ne \emptyset$
         </li>
-        <li>
+        <li id="rule_01_02">
         $p(y) \land \Exists{x \in X}{q(x)} \equiv \Exists{x \in X}{p(y) \land q(x)}$
         </li>
-        <li>
+        <li id="rule_01_03">
         $p(y) \lor \Forall{x \in X}{q(x)} \equiv \Forall{x \in X}{p(y) \lor q(x)}$
         </li>
-        <li>
+        <li id="rule_01_04">
         $p(y) \lor \Exists{x \in X}{q(x)} \equiv \Exists{x \in X}{p(y) \lor q(x)}$, sempre que $X \ne \emptyset$
         </li>
       </ol>
-    </article>
-    <article>
+    </li>
+    <li>
       <h2>Regles deduïdes de les anteriors</h2>
       <ol>
-        <li>
+        <li id="rule_02_01">
         $\Forall{y \in Y}{p(y)} \land \Forall{x \in X}{q(x)} \equiv \Forall{x \in X}{\Forall{y \in Y}{p(y) \land q(x)}}$, sempre que $X \ne \emptyset \land Y \ne \emptyset$
         </li>
-        <li>
+        <li id="rule_02_02">
         $\Exists{y \in Y}{p(y)} \land \Exists{x \in X}{q(x)} \equiv \Exists{x \in X}{\Exists{y \in Y}{p(y) \land q(x)}}$
         </li>
-       <li>
+        <li id="rule_02_03">
         $\Forall{y \in Y}{p(y)} \lor \Forall{x \in X}{q(x)} \equiv \Forall{x \in X}{\Forall{y \in Y}{p(y) \lor q(x)}}$
         </li>
-        <li>
+        <li id="rule_02_04">
         $\Exists{y \in Y}{p(y)} \lor \Exists{x \in X}{q(x)} \equiv \Exists{x \in X}{\Exists{y \in Y}{p(y) \lor q(x)}}$, sempre que $X \ne \emptyset \land Y \ne \emptyset$
         </li>
-        <li>
+        <li id="rule_02_05">
         $\Exists{y \in Y}{p(y)} \land \Forall{x \in X}{q(x)} \equiv \Forall{x \in X}{\Exists{y \in Y}{p(y)\land q(x)}} \equiv \Exists{y \in Y}{\Forall{x \in X}{p(y)\land q(x)}}$, sempre que $X \ne \emptyset$
         </li>
-        <li>
+        <li id="rule_02_06">
         $\Exists{y \in Y}{p(y)} \lor \Forall{x \in X}{q(x)} \equiv \Forall{x \in X}{\Exists{y \in Y}{p(y)\lor q(x)}} \equiv \Exists{y \in Y}{\Forall{x \in X}{p(y)\lor q(x)}}$, sempre que $Y \ne \emptyset$
         </li>
       </ol>
-    </article>
+    </li>
+  </ol>
 </body>
 </html>

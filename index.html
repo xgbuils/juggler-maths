@@ -4,7 +4,19 @@
     <meta charset="utf-8" />
     <title>MathJax TeX Test Page</title>
     <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$','$'], ['\\(','\\)']]
+        },
+        TeX: {
+          Macros: {
+            Nat: '\\mathbb{N}',
+            Forall: ['{\\forall \\text{ } #1 \\text{ } (#2)}', 2],
+            Exists: ['{\\exists \\text{ } #1 \\text{ } (#2)}', 2],
+            then: '\\to'
+          }
+        }
+      });
     </script>
     <script type="text/javascript"
       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -15,23 +27,39 @@
     <h1>Títol a posar ...</h1>
   </header>
   <section>
-    <div class="macros">
-      \(
-        \def \Nat {\mathbb{N}}
-      \)
-    </div>
     <article id="def_001">
       <h2>Definició 1:</h2>
       <p>
         Donat $n \in \Nat$ definim el <strong>conjunt de patrons vàlids</strong> $P_n$ de la següent manera:
-        $$P_n = \{ x \in \Nat^n : \forall{i, j \in \{0..n-1\} ( \exists{q \in \Nat, r \in \{0..n-1\}^n (x_i + i = nq + r_i} \land ( r_i = r_j \implies i = j) ) } \} $$
+        $$P_n = \{ 
+          x \in \Nat^n : 
+            \Forall{
+              i, j \in \{0..n-1\}
+            }{
+              \Exists{
+                q \in \Nat, r \in \{0..n-1\}^n
+              }{ 
+                x_i + i = nq + r_i \land ( r_i = r_j \then i = j
+              }
+            }
+        \} $$
       </p>
     </article>
     <article id="def_002">
       <h2>Definició 2:</h2>
       <p>
         Donat $n \in \Nat$ definim la <strong>funció normalitzadora de patrons de periode n</strong> $\phi_n : \Nat^n \to \{0..n-1\}^n $ de la següent manera:
-        $$\phi_n(x) = r : \forall{i \in \{0..n-1\} (\exists { q \in \Nat (x_i + i = qn + r_i )} ) } $$
+        $$\phi_n(x) = r 
+          : \Forall{
+            i \in \{0..n-1\}
+          }{
+            \Exists { 
+              q \in \Nat 
+            }{
+              x_i + i = qn + r_i 
+            }
+          }
+        $$
       </p>
     </article>
     <article "def_003">
@@ -44,7 +72,14 @@
       <h2>Definició 4:</h2>
       <p>
         Donat $n \in \Nat$ definim el <strong>conjunt de tuples de període $n$ sense repeticions</strong> $S'_n$ de la següent manera:
-        $$S'_n = \{x \in \Nat^n : \forall i, j \in \{0..n-1\} (x_i = x_j \implies i = j) \}$$  
+        $$S'_n = \{
+          x \in \Nat^n 
+            : \Forall {
+              i, j \in \{0..n-1\}
+            }{
+              x_i = x_j \then i = j
+            }
+        \}$$  
       </p>
     </article>
     <article>
@@ -55,12 +90,61 @@
       <h2>Demostració 1:</h2>
       <p>
         Tenim que:
-        $$\phi_n(P_n) = {y \in {0..n-1}^n : x \in P_n \land \phi_n(x) = y }$$
+        $$\phi_n(P_n) = \{y \in \{0..n-1\}^n : x \in P_n \land \phi_n(x) = y \}$$
       </p>
       <p>
         Per la definició <a href="#def_001">1</a> i <a href="#def_002">2</a>:
-        $$\phi_n(P_n) = {y \in {0..n-1}^n : ( x \in \Nat^n : \forall{i, j \in \{0..n-1\} ( \exists{q \in \Nat, r \in \{0..n-1\}^n (x_i + i = nq + r_i} \land ( r_i = r_j \implies i = j) ) } \} ) \land (\forall{i \in \{0..n-1\} (\exists { q \in \Nat (x_i + i = qn + r_i )} ) }) }$$
-      </p>      
+        $$\phi_n(P_n) = \{
+          y \in \{0..n-1\}^n : 
+              x \in \Nat^n 
+            \land 
+              \Forall{
+                i, j \in \{0..n-1\}
+              }{
+                \Exists{
+                  q \in \Nat, r \in \{0..n-1\}^n
+                }{ 
+                  x_i + i = nq + r_i \land ( r_i = r_j \then i = j
+                }
+              }
+            \land 
+              \Forall{
+                k \in \{0..n-1\}
+              }{
+                \Exists { 
+                  q \in \Nat 
+                }{
+                  x_k + k = qn + y_k 
+                }
+              }
+        \}$$
+      </p> 
+      <p>
+        Si $n = 0$, llavors $\{0..n-1\} = \emptyset$ i de manera trivial s'arriba a $\phi_n(P_n) = {S'}_n$
+      </p>
+      <p>
+        En cas contrari, podem aplicar les regles <a href="logica_primer_ordre.html#rule_01_01">LPO 1.1</a> i <a href="logica_primer_ordre.html#rule_01_02">LPO 2.1</a> transformant la expressió a:
+        $$\phi_n(P_n) = \{
+          y \in \{0..n-1\}^n : 
+            \Forall{
+              i, j, k \in \{0..n-1\}
+            }{
+                x \in \Nat^n 
+              \land 
+                \Exists{
+                  q \in \Nat, r \in \{0..n-1\}^n
+                }{ 
+                  x_i + i = nq + r_i \land ( r_i = r_j \then i = j
+                }
+              \land
+                \Exists { 
+                  q \in \Nat 
+                }{
+                  x_k + k = qn + y_k 
+                }
+            }
+        \}$$
+      </p>    
     </article>
   </section>
 </body>
