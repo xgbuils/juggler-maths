@@ -1,0 +1,28 @@
+{
+  "name": "juggler-maths",
+  "version": "0.1.0",
+  "description": "Mathematical model og juggling",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xgbuils/juggler-maths.git"
+  },
+  "keywords": [
+    "juggling",
+    "maths"
+  ],
+  "author": "Xavier Garcia Buils <xgbuils@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xgbuils/juggler-maths/issues"
+  },
+  "homepage": "https://github.com/xgbuils/juggler-maths#readme",
+  "dependencies": {
+    "browser-sync": "^2.8.0",
+    "gulp": "^3.9.0",
+    "gulp-jade": "^1.0.1"
+  }
+}

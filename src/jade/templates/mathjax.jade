@@ -1,0 +1,17 @@
+script(type="text/x-mathjax-config")
+  | MathJax.Hub.Config({
+  |   tex2jax: {
+  |     inlineMath: [['$','$'], ['\\(','\\)']]
+  |   },
+  |   TeX: {
+  |     Macros: {
+  |       Nat: '\\mathbb{N}',
+  |       Int: '\\mathbb{Z}',
+  |       Forall: ['{\\forall \\text{ } #1 \\text{ } (#2)}', 2],
+  |       Exists: ['{\\exists \\text{ } #1 \\text{ } (#2)}', 2],
+  |       then: '\\to'
+  |     }
+  |   }
+  | });
+script(type="text/javascript"
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")

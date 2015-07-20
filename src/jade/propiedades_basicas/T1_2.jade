@@ -1,0 +1,17 @@
+extends ../templates/theorem.jade
+
+block theorem
+  p Dado un patrón malabar $f$ y $n \in \Nat$,
+  p si $f(n) > 0$, entonces $f(f'(n)) > 0$
+
+block demonstration
+  p Si $f'(n) = n$, la demostración es trivial.
+  p Si $f'(n) \neq n$, por la 
+    a(href="#D1.2") definición 1.2 
+    | tenemos $f'(f'(n)) \neq f'(n)$
+  p Por el 
+    a(href="#T1.1") teorema 1.1
+    | , $f'(f'(n)) > f'(n)$
+  p Y por la 
+    a(href="#D1.1") definición 1.1
+    | , $f(f'(n)) > 0$ como queríamos demostrar

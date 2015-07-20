@@ -1,0 +1,55 @@
+extends ./templates/base.jade
+
+block scripts
+  include ./templates/mathjax.jade
+
+block title
+  title Matemática y malabares - Propiedades básicas
+
+block content
+  h1 Definiciones y propiedades básicas
+  section
+    h2 Notación
+    ul
+      li $\Nat$ es el conjunto de números naturales incluído el 0
+      li $\Nat^*$ es el conjunto de números naturales sin incluir el 0
+      li $S_n = \{ x \in \Nat : x &lt; n\}$
+      li
+        p Dada una función $f : \Nat \to \Nat$ y $k \in \Int$,
+          ul
+            li Para $k &gt; 0$, $f^k$ es la función obtenida de la composición de f con sigo misma k veces. 
+            li $f^0$ es la función identidad
+            li $f^{-1}$ es la función inversa de f
+            li Para $k &lt; 0$, $f^k$ es la función obtenida de la composición de $f^{-1}$ con sigo misma $-k$ veces. 
+
+  - var num = '1.1'
+  - var title = 'Función asociada a otra función'
+  include ./propiedades_basicas/D1_1.jade
+
+  - var num = '1.1' 
+  include ./propiedades_basicas/T1_1.jade
+
+  - var num = '1.2'
+  - var title = 'Patrón malabar'
+  include ./propiedades_basicas/D1_2.jade
+
+  - var num = '1.3'
+  - var title = 'Instante'
+  include ./propiedades_basicas/D1_3.jade
+
+  - var num = '1.4'
+  - var title = 'Altura'
+  include ./propiedades_basicas/D1_4.jade
+  
+  - var num = '1.5'
+  - var title = 'Patrón malabar periódico'
+  include ./propiedades_basicas/D1_5.jade
+
+  - var num = '1.2' 
+  include ./propiedades_basicas/T1_2.jade
+
+  - var num = '1.3' 
+  include ./propiedades_basicas/T1_3.jade
+
+  - var num = '1.4' 
+  include ./propiedades_basicas/T1_4.jade

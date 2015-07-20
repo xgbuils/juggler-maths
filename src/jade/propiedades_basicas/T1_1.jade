@@ -1,0 +1,8 @@
+extends ../templates/theorem.jade
+
+block theorem
+  p Para todo $n \in \Nat$, $f'(n) \ge n$
+
+block demonstration
+  p $f'(n) = f(n) + n$
+  p Como $f(n) \ge 0$ entonces $f'(n) \ge n$

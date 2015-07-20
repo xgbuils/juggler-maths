@@ -1,0 +1,23 @@
+extends ../templates/theorem.jade
+
+block theorem
+  p Sea $f$ un patrón malabar, $k \in \Int$ y $x \in \Nat$ tal que $f'^k(x) \in \Nat$
+  p si $f(n) > 0$, entonces $f(f'^k(n)) > 0$
+
+block demonstration
+  ul
+    li
+      p Para $k = 0$ la demostración es trivial.
+    li
+      p Si $k &gt; 0$, cuando $k = 1$ es el <a href="#T1.2">teorema 1.2</a>
+      p Vamos a demostrar que si para $k$ es cierto, para $k+1$ también.
+      p Si $f(n) &gt; 0$, entonces $f(f'^k(n)) &gt; 0$
+      p y si $f(f'^k(n)) &gt; 0$, entonces por el <a href="#T1.2">teorema 1.2</a> $f(f'(f'^k(n))) &gt; 0$
+      p $f(f'(f'^k(n))) = f(f'^{k+1}(n))$, con lo cual queda demostrado para $k > 0$.
+    li
+      p Si $k &lt; 0$ y $f'^k(n) \in \Nat$
+      p Hagamos $m = f'^k(n)$ y, por tanto, $n = f'^{-k}(n)$ tal que $-k &gt; 0$
+      p Entonces la proposición del teorema también se puede expresar como:
+      p Si $f(f'^{-k}(m)) > 0$, entonces $f(m) > 0$
+      p Vamos a demostrar el contrarecíproco suponiendo que $f'(m) = 0$,
+      p Entonces f'(m) = m y, por tanto, $f(f'^{-k}(m)) = f(m) = 0$, quedando demostrado para $k &lt; 0$ y el teorema en su totalidad.
