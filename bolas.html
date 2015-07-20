@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]
+  },
+  TeX: {
+    Macros: {
+      Nat: '\\mathbb{N}',
+      Int: '\\mathbb{Z}',
+      Forall: ['{\\forall \\text{ } #1 \\text{ } (#2)}', 2],
+      Exists: ['{\\exists \\text{ } #1 \\text{ } (#2)}', 2],
+      then: '\\to'
+    }
+  }
+});</script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><title>Matemática y malabares - Número de bolas</title></head><body><h1>Número de bolas</h1><section><article id="D2.1"><h2>Definición 2.1: Función estado</h2><section><p>Definimos la <strong>función estado $\rho_f$ del patrón malabar $f$</strong> como una función $\rho_f : \Nat \to \mathbb{P}(\Nat)$ tal que para todo $n \in \Nat$, $\rho_f(n) = \{y \in f'(S_{n+1}) : y > n)\}$</p></section></article><article id="D2.2"><h2>Definición 2.2: Número de bolas</h2><section><p>Definimos el número de bolas $|\rho_f(n)|$ de un patrón malabar $f$ en un instante $n$ como la cardinalidad del conjunto $\rho_f(n)$.</p></section></article></section></body></html>
