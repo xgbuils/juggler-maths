@@ -1,0 +1,18 @@
+extends ./templates/base.jade
+
+block scripts
+  include ./templates/mathjax.jade
+
+block title
+  title Matemática y malabares - Número de bolas
+
+block content
+  h1 Número de bolas
+  section
+    - var num = '2.1'
+    - var title = 'Función estado'
+    include ./bolas/D2_1.jade
+
+    - var num = '2.2'
+    - var title = 'Número de bolas'
+    include ./bolas/D2_2.jade
