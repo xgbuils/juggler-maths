@@ -7,6 +7,7 @@ A mathematical model of juggling
 - Install gulp:
 ``` bash
 npm install -g gulp
+```
 
 # Install:
 ## Install
