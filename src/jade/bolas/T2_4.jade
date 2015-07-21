@@ -1,0 +1,10 @@
+extends ../templates/theorem.jade
+
+block theorem
+  p Si existe $n + 1 \in \rho_f(n)$ entonces $|\rho_f(n)| = |\rho_f(n + 1)|$
+
+block demonstration
+  p Por el #[a(href="#T2.1") teorema 2.2] todo valor $x > n + 1 \and x \in \rho_f(n)$ pertenece también a $\rho_f(n)$
+  p Si $n + 1 \in \rho_f(n)$ entonces por la #[a(href="#D2.1") definición 2.1] $n + 1 \not\in \rho_f(n + 1)$. Con lo cual $\rho_f(n) - \rho_f(n + 1) = \{n + 1\}$
+  p Si $n + 1 \in \rho_f(n)$ entonces $f'(n + 1) \in \rho_f(n + 1)$ y $f'(n + 1) \not\in \rho_f(n)$. Con lo cual $\rho_f(n + 1) - \rho_f(n) = \{f'(n + 1)\}$
+  p Como para conjuntos finitos $A$ y $B$, si $|A - B| = |B - A|$ entonces |A| = |B|, tenemos que si $n + 1 \in \rho_f(n)$ entonces $|\rho_f(n)| = |\rho_f(n + 1)|$ como queríamos demostrar.

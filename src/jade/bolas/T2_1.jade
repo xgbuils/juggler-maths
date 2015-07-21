@@ -1,0 +1,8 @@
+extends ../templates/theorem.jade
+
+block theorem
+  p Si $n + 1 \in \rho_f(n)$ entonces $f(n+1) > 0$
+
+block demonstration
+  p Si $n + 1 \in \rho_f(n)$ entonces existe $i \in S_{n+1}$ tal que $f'(i) = n + 1$
+  p Demostremos por reducción al absurdo y supongamos que $f(n+1) = 0$. Entonces por la #[a(href="propiedades_basicas.html#D1.1") definición 1.1] $f'(n+1) = n + 1$. Pero esto contradice la #[a(href="propiedades_basicas.html#D1.2") definición 1.2] que dice que $f'$ es inyectiva. Ya que $f'$ toma el valor $n + 1$ para $i = n + 1$ y para $i \le n$ quedando, así, demostrado el teorema.

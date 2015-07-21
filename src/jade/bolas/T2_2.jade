@@ -1,0 +1,12 @@
+extends ../templates/theorem.jade
+
+block theorem
+  p Si existe $x \in \rho_f(n)$ y $x \neq n + 1$ entonces $x \in \rho_f(n + 1)$
+
+block demonstration
+  p La premisa del enunciado equivale a decir que existe $x \in \{y \in f'(S_{n + 1}) : y > n + 1\}$
+  p Por la #[a(href="propiedades_basicas#D2.1") definición 2.1] de la función estado tenemos que:
+  p $\rho_f(n + 1) = \{y \in f'(S_{n + 2}) : y > n + 1)\}$
+  p Manipulando la expresión anterior tenemos que:
+  p $\rho_f(n + 1) = \{y \in f'(S_{n + 1}) : y > n + 1)\} \cup \{y \in f'(\{n + 1\}) : y > n + 1)\}$
+  p De donde se deduce que $x \in \rho_f(n + 1)$ como queríamos demostrar.
