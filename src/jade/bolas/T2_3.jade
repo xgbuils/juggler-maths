@@ -1,8 +1,8 @@
 extends ../templates/theorem.jade
 
 block theorem
-  p Si $n + 1 \in \rho_f(n)$ entonces $f'(n + 1) \not\in \rho_f(n)$
+  p Si $n + 1 \in \rho_f(n)$ entonces $f'(n + 1) \in \rho_f(n + 1)$
 
 block demonstration
-  p Si $n + 1 \in \rho_f(n)$ por el #[a(href="#T2.1") teorema 2.1] f(n + 1) > 0 y por el #[a(href="propiedades_basicas.html#T1.1") teorema 1.1] $f'(n + 1) > n + 1$
-  p Ahora demostremos por reducción al absurdo y supongamos que $f'(n + 1) \in \rho_f(n)$. Entonces por la #[a(href="#D2.1") definición 2.1] existe $i < n + 1$ tal que $f'(i) = f'(n + 1)$. Pero esto no es posible porque f' es inyectiva quedando, así, demostrado el teorema.
+  p $n + 1 \in S_{n + 2}$. Además por el #[a(href="#T2.1") teorema 2.1] $f(n + 1) > 0$ y por la #[a(href="propiedades_basicas.html#D1.1") definición 1.1] $f'(n + 1) > n +1$. 
+  p De manera que $f'(n + 1) \in \rho_f(n + 1)$
