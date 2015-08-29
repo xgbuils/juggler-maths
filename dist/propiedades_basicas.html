@@ -97,12 +97,12 @@
         <h3>Teorema 1.3: </h3>
         <div class="content">
           <p>Dado un patrón malabar $f$, $n \in \Nat$ y $m \in \Nat$ tal que $m = f'^{-1}(n)$</p>
-          <p>si $f(n) > 0$, entonces $f(f'^{-1}(n)) > 0$</p>
+          <p>si $f(n) \gt 0$, entonces $f(f'^{-1}(n)) \gt 0$</p>
           <div class="demonstration">
             <h4>Demostración:</h4>
             <div class="demonstration-content">
               <p>La proposición del teorema también se puede expresar como:</p>
-              <p>Si $f(f'(m)) > 0$, entonces $f(m) > 0$</p>
+              <p>Si $f(f'(m)) \gt 0$, entonces $f(m) \gt 0$</p>
               <p>Esto se corresponde al <em>sólo si</em> del <a href="#T1.2">teorema 1.2</a>. Por tanto queda demostrado.</p>
             </div>
           </div>
@@ -121,15 +121,15 @@
                   <p>Para $k = 0$ la demostración es trivial.</p>
                 </li>
                 <li>
-                  <p>Si $k &gt; 0$, cuando $k = 1$ es el <a href="#T1.2">teorema 1.2</a></p>
+                  <p>Si $k \gt 0$, cuando $k = 1$ es el <a href="#T1.2">teorema 1.2</a></p>
                   <p>Vamos a demostrar que si para $k$ es cierto, para $k+1$ también.</p>
-                  <p>Si $f(n) &gt; 0$, entonces $f(f'^k(n)) &gt; 0$</p>
-                  <p>y si $f(f'^k(n)) &gt; 0$, entonces por el <a href="#T1.2">teorema 1.2</a> $f(f'(f'^k(n))) &gt; 0$</p>
+                  <p>Si $f(n) \gt 0$, entonces $f(f'^k(n)) \gt 0$</p>
+                  <p>y si $f(f'^k(n)) \gt 0$, entonces por el <a href="#T1.2">teorema 1.2</a> $f(f'(f'^k(n))) &gt; 0$</p>
                   <p>$f(f'(f'^k(n))) = f(f'^{k+1}(n))$, con lo cual queda demostrado para $k \gt 0$.</p>
                 </li>
                 <li>
-                  <p>Si $k &lt; 0$ y $f'^k(n) \in \Nat$</p>
-                  <p>Hagamos $m = f'^k(n)$ y, por tanto, $n = f'^{-k}(n)$ tal que $-k &gt; 0$</p>
+                  <p>Si $k \lt 0$ y $f'^k(n) \in \Nat$</p>
+                  <p>Hagamos $m = f'^k(n)$ y, por tanto, $n = f'^{-k}(n)$ tal que $-k \gt 0$</p>
                   <p>Entonces la proposición del teorema también se puede expresar como:</p>
                   <p>Si $f(f'^{-k}(m)) \gt 0$, entonces $f(m) \gt 0$</p>
                   <p>Vamos a demostrar el contrarecíproco suponiendo que $f'(m) = 0$,</p>
