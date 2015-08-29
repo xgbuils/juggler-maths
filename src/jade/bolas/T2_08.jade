@@ -1,0 +1,8 @@
+extends ../templates/theorem.jade
+
+block theorem
+  p Si $n + 1 \in \rho_f(n)$ entonces $f'(n + 1) \not\in \rho_f(n)$
+
+block demonstration
+  p Si $n + 1 \in \rho_f(n)$ por el #[a(href="#T2.1") teorema 2.1] $f(n + 1) \gt 0$ y por la #[a(href="propiedades_basicas.html#D1.1") definición 1.1] $f'(n + 1) \gt n + 1$
+  p Ahora demostremos por reducción al absurdo y supongamos que $f'(n + 1) \in \rho_f(n)$. Entonces por la #[a(href="#D2.1") definición 2.1] existe $i \lt n + 1$ tal que $f'(i) = f'(n + 1)$. Pero esto no es posible porque f' es inyectiva quedando, así, demostrado el teorema.

@@ -1,0 +1,8 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="css/style.css"><title>Malabares y matemáticas</title></head><body><header class="header"><h1>Malabares y matemáticas</h1></header><div class="content"><div class="main"><article class="intro"><h2>Introducción</h2><ol><li><a href="intro.html">Introducción</a></li></ol></article><article class="theory"><h2>Teoría</h2><ol><li><a href="propiedades_basicas.html">Propiedades básicas</a></li><li><a href="bolas.html">Bolas</a></li><li><a href="ciclos.html">Ciclos</a></li><li><a href="congruencia_divisibilidad.html">Congruencia y divisibilidad</a></li></ol></article></div></div><script>var p = document.querySelector('.definition p, .theorem p');
+var width = getComputedStyle(p).width;
+setTimeout(function () {
+	  var p = document.querySelectorAll('.definition p, .theorem p');
+  for (var i = 0; i < p.length; ++i) {
+    console.log(p[i].style.width = width + ' !important');
+  }
+	}, 5000)</script></body></html>

@@ -1,0 +1,9 @@
+extends ../templates/theorem.jade
+
+block theorem
+  p $\rho^*_f(n) \cap \{y \in f'(S_{n+1}) : y = n + 1\} = \emptyset$
+
+block demonstration
+  p Si $x \in \rho^*_f(n)$, por la #[a(href="#D2.3") definición 2.3] $x \gt n + 1$ y entonces $x \not\in \{y \in f'(S_{n+1}) : y = n + 1\}$
+  p Si $x \in \{y \in f'(S_{n+1}) : y = n + 1\}$, entonces $x = n + 1$ y entonces $x \not\in \rho^*_f(n)$, por la #[a(href="#D2.3") definición 2.3].
+  p Por tanto, son conjuntos disjuntos y su intersección es vacía como queríamos demostrar.

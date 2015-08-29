@@ -1,0 +1,8 @@
+extends ../templates/theorem.jade
+
+block theorem
+  p Si $n + 1 \in \rho_f(n)$ entonces $\rho_f(n + 1) = \rho^*_f(n) \cup \{f'(n + 1)\}$
+
+block demonstration
+  p Si $n + 1 \in \rho_f(n)$ por el #[a(href="#T2.7") teorema 2.7] $f'(n+1) \in \rho_f(n + 1)$. Por los teoremas #[a(href="#T2.2") 2.2] y #[a(href="#T2.4") 2.4] sólo puede ser que $f'(n+1) \in \{f'(\{n+1\}) : y \gt n + 1 \}$.
+  p Por el teorema #[a(href="#T2.5") 2.2] y #[a(href="propiedades_basicas.html#T1.1") 1.1] es cierto que $f'(n+1) \in \{f'(\{n+1\}) : y \gt n + 1 \}$ y, por tanto, $\{f'(\{n+1\}) : y \gt n + 1 \} = \{f'(n+1)\}$ quedando demostrado el teorema.

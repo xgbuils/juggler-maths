@@ -1,0 +1,8 @@
+extends ../templates/theorem.jade
+
+block theorem
+  p Si existe $x \in \rho_f(n)$ y $x \neq n + 1$ entonces $x \in \rho_f(n + 1)$
+
+block demonstration
+  p Si existe $x \in \rho_f(n)$ y $x \neq n + 1$ entonces por la #[a(href="#D2.3") definición 2.3] $x \in \rho^*_f(n)$.
+  p Entonces por el #[a(href="T2.2") teorema 2.2] $x \in \rho_f(n + 1)$ como queríamos demostrar.

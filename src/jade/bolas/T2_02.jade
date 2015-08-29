@@ -1,0 +1,13 @@
+extends ../templates/theorem.jade
+
+block theorem
+  p $\rho_f(n + 1) = \rho^*_f(n) \cup \{y \in f'(\{n+1\}) : y \gt n + 1 \}$
+
+block demonstration
+  p Por la #[a(href="#D2.1") definición 2.1]:
+  p $\rho_f(n + 1) = \{y \in f'(S_{n+2}) : y \gt n + 1)\}$
+  p Manipulando la expresión:
+  p $\{y \in f'(S_{n+2}) : y \gt n + 1)\} = \{y \in f'(S_{n+1}) : y \gt n + 1)\} \cup \{y \in f'(\{n+1\}) : y \gt n + 1\}$
+  p y por #[a(href="#D2.3") definición 2.3]:
+  p $\{y \in f'(S_{n+1}) : y \gt n + 1)\} \cup \{y \in f'(\{n+1\}) : y \gt n + 1\} = \rho^*_f(n) \cup \{y \in f'(\{n+1\}) : y \gt n + 1\}$
+  p quedando demostrado el teorema.

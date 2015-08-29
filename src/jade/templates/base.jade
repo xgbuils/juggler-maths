@@ -2,9 +2,22 @@ doctype html
 html(lang='es')
   head
     meta(charset='utf-8')
-    block scripts
+    link(rel="stylesheet" href="css/style.css")
     block title
       title Malabares y matemáticas
   body
-    block content
-      | some text
+    header.header
+        h1 Malabares y matemáticas
+    .content
+        block content
+          | some text
+    script
+      | var p = document.querySelector('.definition p, .theorem p');
+      | var width = getComputedStyle(p).width;
+      | setTimeout(function () {
+      |	  var p = document.querySelectorAll('.definition p, .theorem p');
+      |   for (var i = 0; i < p.length; ++i) {
+      |     console.log(p[i].style.width = width + ' !important');
+      |   }
+      |	}, 5000)
+    block scripts

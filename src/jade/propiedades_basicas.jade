@@ -7,15 +7,15 @@ block title
   title Matemática y malabares - Propiedades básicas
 
 block content
-  h1 Definiciones y propiedades básicas
+  h2 Definiciones y propiedades básicas
   section
-    h2 Notación
+    h3 Notación
     ul
       li $\Nat$ es el conjunto de números naturales incluído el 0
       li $\Nat^*$ es el conjunto de números naturales sin incluir el 0
       li $S_n = \{ x \in \Nat : x &lt; n\}$
       li
-        p Dada una función $f : \Nat \to \Nat$ y $k \in \Int$,
+        div Dada una función $f : \Nat \to \Nat$ y $k \in \Int$,
           ul
             li Para $k &gt; 0$, $f^k$ es la función obtenida de la composición de f con sigo misma k veces. 
             li $f^0$ es la función identidad
@@ -45,7 +45,8 @@ block content
   - var title = 'Patrón malabar periódico'
   include ./propiedades_basicas/D1_5.jade
 
-  - var num = '1.2' 
+  - var num = '1.2'
+  - var title = ''
   include ./propiedades_basicas/T1_2.jade
 
   - var num = '1.3' 

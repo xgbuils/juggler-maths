@@ -10,7 +10,15 @@ script(type="text/x-mathjax-config")
   |       Forall: ['{\\forall \\text{ } #1 \\text{ } (#2)}', 2],
   |       Exists: ['{\\exists \\text{ } #1 \\text{ } (#2)}', 2],
   |       then: '\\to',
-  |       and: '\\wedge'
+  |       and: '\\wedge',
+  |       emptyset: '\\varnothing'
+  |     }
+  |   },
+  |   MathZoom: {
+  |     styles: {
+  |       "#MathJax_Zoom": {
+  |         overflow: "auto ! important"
+  |       }
   |     }
   |   }
   | });

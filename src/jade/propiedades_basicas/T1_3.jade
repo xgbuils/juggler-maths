@@ -1,11 +1,10 @@
 extends ../templates/theorem.jade
 
 block theorem
-  p Dado un patrón malabar $f$, $n \in \Nat$ y $m \in \Nat$ tal que $m = f'^{-1}(n)$</p>
+  p Dado un patrón malabar $f$, $n \in \Nat$ y $m \in \Nat$ tal que $m = f'^{-1}(n)$
   p si $f(n) > 0$, entonces $f(f'^{-1}(n)) > 0$
 
 block demonstration
   p La proposición del teorema también se puede expresar como:
   p Si $f(f'(m)) > 0$, entonces $f(m) > 0$
-  p Vamos a demostrar el contrarecíproco suponiendo que $f'(m) = 0$,
-  p Entonces f'(m) = m y, por tanto, $f(f'(m)) = f(m) = 0$, quedando demostrado el teorema.
+  p Esto se corresponde al #[em sólo si] del #[a(href="#T1.2") teorema 1.2]. Por tanto queda demostrado.

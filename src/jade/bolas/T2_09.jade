@@ -1,0 +1,7 @@
+extends ../templates/theorem.jade
+
+block theorem
+  p Si $n + 1 \in \rho_f(n)$ entonces $\rho_f(n) = \rho^*_f(n) \cup \{n + 1\}$
+
+block demonstration
+  p Si $n + 1 \in \rho_f(n)$ por el teorema #[a(href="#T2.1") 2.1] y #[a(href="#T2.3") 2.3], $n + 1 \in \{f'(S_{n+1}) : y = n + 1\}$. Y esto sólo es posible si $\{y \in f'(S_{n+1}) : y = n + 1\} = \{n + 1\}$ quedando demostrado el teorema.

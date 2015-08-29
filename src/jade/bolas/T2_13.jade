@@ -1,0 +1,9 @@
+extends ../templates/theorem.jade
+
+block theorem
+  p Si $n + 1 \not\in \rho_f(n)$ entonces $0 \le |\rho_f(n + 1)| - |\rho_f(n)| \le 1$
+
+block demonstration
+  p Si $n + 1 \not\in \rho_f(n)$ entonces por el #[a(href="#T2.10") teorema 2.10] $\rho_f(n) = \rho^*_f(n) \subset \rho_f(n + 1)$. Quedando demostrada la condición $0 \le |\rho_f(n + 1)| - |\rho_f(n)|$
+  p Por los teoremas #[a(href="#T2.2") 2.2], #[a(href="#T2.4") 2.4] y #[a(href="#T2.11") 2.11] $|\rho_f(n + 1)| = |\rho^*_f(n)| + |\{y \in f'(\{n+1\}) : y \gt n + 1 \}| \le |\rho^*_f(n)| + 1$. Y, como $\rho_f(n) = \rho^*_f(n)$, queda demostrada la condición $|\rho_f(n + 1)| - |\rho_f(n)| \le 1$.
+  p Por tanto, queda demostrado el teorema.

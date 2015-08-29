@@ -1,0 +1,8 @@
+extends ../templates/theorem.jade
+
+block theorem
+  p Si existe $n + 1 \in \rho_f(n)$ entonces $|\rho_f(n)| = |\rho_f(n + 1)|$
+
+block demonstration
+  p Para conjuntos finitos $A$ y $B$, si $|A - B| = |B - A|$ entonces |A| = |B|.
+  p Con lo cual por los teoremas #[a(href="#D2.5") 2.5] y #[a(href="#D2.6") 2.6] tenemos que si $n + 1 \in \rho_f(n)$ entonces $|\rho_f(n)| = |\rho_f(n + 1)|$ como queríamos demostrar.

@@ -1,15 +1,267 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><script type="text/x-mathjax-config">MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']]
-  },
-  TeX: {
-    Macros: {
-      Nat: '\\mathbb{N}',
-      Int: '\\mathbb{Z}',
-      Forall: ['{\\forall \\text{ } #1 \\text{ } (#2)}', 2],
-      Exists: ['{\\exists \\text{ } #1 \\text{ } (#2)}', 2],
-      then: '\\to',
-      and: '\\wedge'
-    }
-  }
-});</script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><title>Matemática y malabares - Número de bolas</title></head><body><h1>Número de bolas</h1><section><article id="D2.1"><h2>Definición 2.1: Función estado</h2><section><p>Definimos la <strong>función estado $\rho_f$ del patrón malabar $f$</strong> como una función $\rho_f : \Nat \to \mathbb{P}(\Nat)$ tal que para todo $n \in \Nat$, $\rho_f(n) = \{y \in f'(S_{n+1}) : y > n)\}$</p></section></article><article id="D2.2"><h2>Definición 2.2: Número de bolas</h2><section><p>Definimos el número de bolas $|\rho_f(n)|$ de un patrón malabar $f$ en un instante $n$ como la cardinalidad del conjunto $\rho_f(n)$.</p></section></article><article id="T2.1"><h2>Teorema 2.1:</h2><p>Si $n + 1 \in \rho_f(n)$ entonces $f(n+1) > 0$</p><section><h3>Demostración:</h3><p>Si $n + 1 \in \rho_f(n)$ entonces existe $i \in S_{n+1}$ tal que $f'(i) = n + 1$</p><p>Demostremos por reducción al absurdo y supongamos que $f(n+1) = 0$. Entonces por la <a href="propiedades_basicas.html#D1.1">definición 1.1</a> $f'(n+1) = n + 1$. Pero esto contradice la <a href="propiedades_basicas.html#D1.2">definición 1.2</a> que dice que $f'$ es inyectiva. Ya que $f'$ toma el valor $n + 1$ para $i = n + 1$ y para $i \le n$ quedando, así, demostrado el teorema.</p></section></article><article id="T2.2"><h2>Teorema 2.2:</h2><p>Si existe $x \in \rho_f(n)$ y $x \neq n + 1$ entonces $x \in \rho_f(n + 1)$</p><section><h3>Demostración:</h3><p>La premisa del enunciado equivale a decir que existe $x \in \{y \in f'(S_{n + 1}) : y > n + 1\}$</p><p>Por la <a href="propiedades_basicas#D2.1">definición 2.1</a> de la función estado tenemos que:</p><p>$\rho_f(n + 1) = \{y \in f'(S_{n + 2}) : y > n + 1)\}$</p><p>Manipulando la expresión anterior tenemos que:</p><p>$\rho_f(n + 1) = \{y \in f'(S_{n + 1}) : y > n + 1)\} \cup \{y \in f'(\{n + 1\}) : y > n + 1)\}$</p><p>De donde se deduce que $x \in \rho_f(n + 1)$ como queríamos demostrar.</p></section></article><article id="T2.3"><h2>Teorema 2.3:</h2><p>Si $n + 1 \in \rho_f(n)$ entonces $f'(n + 1) \in \rho_f(n + 1)$</p><section><h3>Demostración:</h3><p>$n + 1 \in S_{n + 2}$. Además por el <a href="#T2.1">teorema 2.1</a> $f(n + 1) > 0$ y por la <a href="propiedades_basicas.html#D1.1">definición 1.1</a> $f'(n + 1) > n +1$. </p><p>De manera que $f'(n + 1) \in \rho_f(n + 1)$</p></section></article><article id="T2.4"><h2>Teorema 2.4:</h2><p>Si $n + 1 \in \rho_f(n)$ entonces $f'(n + 1) \not\in \rho_f(n)$</p><section><h3>Demostración:</h3><p>Si $n + 1 \in \rho_f(n)$ por el <a href="#T2.1">teorema 2.1</a> $f(n + 1) > 0$ y por la <a href="propiedades_basicas.html#D1.1">definición 1.1</a> $f'(n + 1) > n + 1$</p><p>Ahora demostremos por reducción al absurdo y supongamos que $f'(n + 1) \in \rho_f(n)$. Entonces por la <a href="#D2.1">definición 2.1</a> existe $i < n + 1$ tal que $f'(i) = f'(n + 1)$. Pero esto no es posible porque f' es inyectiva quedando, así, demostrado el teorema.</p></section></article><article id="T2.5"><h2>Teorema 2.5:</h2><p>Si existe $n + 1 \in \rho_f(n)$ entonces $|\rho_f(n)| = |\rho_f(n + 1)|$</p><section><h3>Demostración:</h3><p>Por el <a href="#T2.1">teorema 2.2</a> todo valor $x > n + 1 \and x \in \rho_f(n)$ pertenece también a $\rho_f(n + 1)$</p><p>Si $n + 1 \in \rho_f(n)$ entonces por la <a href="#D2.1">definición 2.1</a> $n + 1 \not\in \rho_f(n + 1)$. Con lo cual $\rho_f(n) - \rho_f(n + 1) = \{n + 1\}$</p><p>Si $n + 1 \in \rho_f(n)$ entonces por los teoremas <a href="#T2.3">2.3</a> y <a href="#T2.4">2.4</a> $f'(n + 1) \in \rho_f(n + 1)$ y $f'(n + 1) \not\in \rho_f(n)$. Con lo cual $\rho_f(n + 1) - \rho_f(n) = \{f'(n + 1)\}$</p><p>Como para conjuntos finitos $A$ y $B$, si $|A - B| = |B - A|$ entonces |A| = |B|, tenemos que si $n + 1 \in \rho_f(n)$ entonces $|\rho_f(n)| = |\rho_f(n + 1)|$ como queríamos demostrar.</p></section></article></section></body></html>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Matemática y malabares - Número de bolas</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Malabares y matemáticas</h1>
+    </header>
+    <div class="content">
+      <h1>Número de bolas</h1>
+      <section>
+        <article id="D2.1" class="definition">
+          <h3>Definición 2.1: Función estado</h3>
+          <div class="content">
+            <p>Definimos la <strong>función estado $\rho_f$ del patrón malabar $f$</strong> como una función $\rho_f : \Nat \to \mathbb{P}(\Nat)$ tal que para todo $n \in \Nat$, $\rho_f(n) = \{y \in f'(S_{n+1}) : y \gt n)\}$</p>
+          </div>
+        </article>
+        <article id="D2.2" class="definition">
+          <h3>Definición 2.2: Número de bolas</h3>
+          <div class="content">
+            <p>Definimos el número de bolas $|\rho_f(n)|$ de un patrón malabar $f$ en un instante $n$ como la cardinalidad del conjunto $\rho_f(n)$.</p>
+          </div>
+        </article>
+        <article id="D2.3" class="definition">
+          <h3>Definición 2.3: </h3>
+          <div class="content">
+            <p>Como el los siguientes teoremas se hará uso en las demostraciones del conjunto de elementos de $\rho_f(n)$ excepto el elemento $n -1$, vamos a definir la función $\rho^*_f : \Nat \to \mathbb{P}(\Nat)$ tal que $\rho^*_f(n) = \rho_f(n) - \{n - 1\}$.</p>
+            <p>Por la definición, también puede expresarse $\rho^*_f(n) = \{y \in f'(S_{n+1}) : y \gt n + 1)\}$</p>
+          </div>
+        </article>
+        <article id="T2.1" class="theorem">
+          <h3>Teorema 2.1: </h3>
+          <div class="content">
+            <p>$\rho_f(n) = \rho^*_f(n) \cup \{y \in f'(S_{n+1}) : y = n + 1\}$</p>
+            <div class="demonstration">
+              <h4>Demostración:</h4>
+              <div class="demonstration-content">
+                <p>Por la <a href="#D2.1">definición 2.1</a>:</p>
+                <p>$\rho_f(n) = \{y \in f'(S_{n+1}) : y \gt n)\}$</p>
+                <p>Manipulando la expresión:</p>
+                <p>$\{y \in f'(S_{n+1}) : y \gt n)\} = \{y \in f'(S_{n+1}) : y \gt n + 1)\} \cup \{y \in f'(S_{n+1}) : y = n + 1\}$</p>
+                <p>y por <a href="#D2.3">definición 2.3</a>:</p>
+                <p>$\{y \in f'(S_{n+1}) : y \gt n + 1)\} \cup \{y \in f'(S_{n+1}) : y = n + 1\} = \rho^*_f(n) \cup \{y \in f'(S_{n+1}) : y = n + 1\}$</p>
+                <p>quedando demostrado el teorema.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article id="T2.2" class="theorem">
+          <h3>Teorema 2.2: </h3>
+          <div class="content">
+            <p>$\rho_f(n + 1) = \rho^*_f(n) \cup \{y \in f'(\{n+1\}) : y \gt n + 1 \}$</p>
+            <div class="demonstration">
+              <h4>Demostración:</h4>
+              <div class="demonstration-content">
+                <p>Por la <a href="#D2.1">definición 2.1</a>:</p>
+                <p>$\rho_f(n + 1) = \{y \in f'(S_{n+2}) : y \gt n + 1)\}$</p>
+                <p>Manipulando la expresión:</p>
+                <p>$\{y \in f'(S_{n+2}) : y \gt n + 1)\} = \{y \in f'(S_{n+1}) : y \gt n + 1)\} \cup \{y \in f'(\{n+1\}) : y \gt n + 1\}$</p>
+                <p>y por <a href="#D2.3">definición 2.3</a>:</p>
+                <p>$\{y \in f'(S_{n+1}) : y \gt n + 1)\} \cup \{y \in f'(\{n+1\}) : y \gt n + 1\} = \rho^*_f(n) \cup \{y \in f'(\{n+1\}) : y \gt n + 1\}$</p>
+                <p>quedando demostrado el teorema.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article id="T2.3" class="theorem">
+          <h3>Teorema 2.3: </h3>
+          <div class="content">
+            <p>$\rho^*_f(n) \cap \{y \in f'(S_{n+1}) : y = n + 1\} = \emptyset$</p>
+            <div class="demonstration">
+              <h4>Demostración:</h4>
+              <div class="demonstration-content">
+                <p>Si $x \in \rho^*_f(n)$, por la <a href="#D2.3">definición 2.3</a> $x \gt n + 1$ y entonces $x \not\in \{y \in f'(S_{n+1}) : y = n + 1\}$</p>
+                <p>Si $x \in \{y \in f'(S_{n+1}) : y = n + 1\}$, entonces $x = n + 1$ y entonces $x \not\in \rho^*_f(n)$, por la <a href="#D2.3">definición 2.3</a>.</p>
+                <p>Por tanto, son conjuntos disjuntos y su intersección es vacía como queríamos demostrar.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article id="T2.4" class="theorem">
+          <h3>Teorema 2.4: </h3>
+          <div class="content">
+            <p>$\rho^*_f(n) \cap \{y \in f'(\{n+1\}) : y \gt n + 1 \} = \emptyset$</p>
+            <div class="demonstration">
+              <h4>Demostración:</h4>
+              <div class="demonstration-content">
+                <p>Por la <a href="#D2.3">definición 2.3</a> $\rho^*_f(n) \subset f'(S_{n+1})$</p>
+                <p>Además $\{y \in f'(\{n+1\}) : y \gt n + 1 \} \subset f'(\{n+1\})$.</p>
+                <p>$S_{n+1}$ y $\{n+1\}$ son disjuntos y por la inyectividad de $f'$, $f'(S_{n+1})$ y $f'(\{n+1\})$ también son disjuntos.</p>
+                <p>Por tanto $\rho^*_f(n)$ y $\{y \in f'(\{n+1\}) : y \gt n + 1 \}$ son disjuntos quedando demostrado el teorema.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article id="T2.5" class="theorem">
+          <h3>Teorema 2.5: </h3>
+          <div class="content">
+            <p>Si $n + 1 \in \rho_f(n)$ entonces $f(n+1) \gt 0$</p>
+            <div class="demonstration">
+              <h4>Demostración:</h4>
+              <div class="demonstration-content">
+                <p>Si $n + 1 \in \rho_f(n)$ entonces existe $i \in S_{n+1}$ tal que $f'(i) = n + 1$</p>
+                <p>Demostremos por reducción al absurdo y supongamos que $f(n+1) = 0$. Entonces por la <a href="propiedades_basicas.html#D1.1">definición 1.1</a> $f'(n+1) = n + 1$. Pero esto contradice la <a href="propiedades_basicas.html#D1.2">definición 1.2</a> que dice que $f'$ es inyectiva. Ya que $f'$ toma el valor $n + 1$ para $i = n + 1$ y para $i \le n$ quedando, así, demostrado el teorema.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article id="T2.6" class="theorem">
+          <h3>Teorema 2.6: </h3>
+          <div class="content">
+            <p>Si existe $x \in \rho_f(n)$ y $x \neq n + 1$ entonces $x \in \rho_f(n + 1)$</p>
+            <div class="demonstration">
+              <h4>Demostración:</h4>
+              <div class="demonstration-content">
+                <p>Si existe $x \in \rho_f(n)$ y $x \neq n + 1$ entonces por la <a href="#D2.3">definición 2.3</a> $x \in \rho^*_f(n)$.</p>
+                <p>Entonces por el <a href="T2.2">teorema 2.2</a> $x \in \rho_f(n + 1)$ como queríamos demostrar.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article id="T2.7" class="theorem">
+          <h3>Teorema 2.7: </h3>
+          <div class="content">
+            <p>Si $n + 1 \in \rho_f(n)$ entonces $f'(n + 1) \in \rho_f(n + 1)$</p>
+            <div class="demonstration">
+              <h4>Demostración:</h4>
+              <div class="demonstration-content">
+                <p>$n + 1 \in S_{n + 2}$. Además por el <a href="#T2.5">teorema 2.5</a> $f(n + 1) \gt 0$ y por la <a href="propiedades_basicas.html#D1.1">definición 1.1</a> $f'(n + 1) \gt n + 1$. </p>
+                <p>De manera que $f'(n + 1) \in \rho_f(n + 1)$ como queríamos demostrar.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article id="T2.8" class="theorem">
+          <h3>Teorema 2.8: </h3>
+          <div class="content">
+            <p>Si $n + 1 \in \rho_f(n)$ entonces $f'(n + 1) \not\in \rho_f(n)$</p>
+            <div class="demonstration">
+              <h4>Demostración:</h4>
+              <div class="demonstration-content">
+                <p>Si $n + 1 \in \rho_f(n)$ por el <a href="#T2.1">teorema 2.1</a> $f(n + 1) \gt 0$ y por la <a href="propiedades_basicas.html#D1.1">definición 1.1</a> $f'(n + 1) \gt n + 1$</p>
+                <p>Ahora demostremos por reducción al absurdo y supongamos que $f'(n + 1) \in \rho_f(n)$. Entonces por la <a href="#D2.1">definición 2.1</a> existe $i \lt n + 1$ tal que $f'(i) = f'(n + 1)$. Pero esto no es posible porque f' es inyectiva quedando, así, demostrado el teorema.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article id="T2.9" class="theorem">
+          <h3>Teorema 2.9: </h3>
+          <div class="content">
+            <p>Si $n + 1 \in \rho_f(n)$ entonces $\rho_f(n) = \rho^*_f(n) \cup \{n + 1\}$</p>
+            <div class="demonstration">
+              <h4>Demostración:</h4>
+              <div class="demonstration-content">
+                <p>Si $n + 1 \in \rho_f(n)$ por el teorema <a href="#T2.1">2.1</a> y <a href="#T2.3">2.3</a>, $n + 1 \in \{f'(S_{n+1}) : y = n + 1\}$. Y esto sólo es posible si $\{y \in f'(S_{n+1}) : y = n + 1\} = \{n + 1\}$ quedando demostrado el teorema.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article id="T2.10" class="theorem">
+          <h3>Teorema 2.10: </h3>
+          <div class="content">
+            <p>Si $n + 1 \not\in \rho_f(n)$ entonces $\rho_f(n) = \rho^*_f(n)$</p>
+            <div class="demonstration">
+              <h4>Demostración:</h4>
+              <div class="demonstration-content">
+                <p>Queda demostrado por el <a href="T2.1">teorema 2.1</a> y dado que $n + 1 \not\in \rho_f(n)$.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article id="T2.11" class="theorem">
+          <h3>Teorema 2.11: </h3>
+          <div class="content">
+            <p>Si $n + 1 \in \rho_f(n)$ entonces $\rho_f(n + 1) = \rho^*_f(n) \cup \{f'(n + 1)\}$</p>
+            <div class="demonstration">
+              <h4>Demostración:</h4>
+              <div class="demonstration-content">
+                <p>Si $n + 1 \in \rho_f(n)$ por el <a href="#T2.7">teorema 2.7</a> $f'(n+1) \in \rho_f(n + 1)$. Por los teoremas <a href="#T2.2">2.2</a> y <a href="#T2.4">2.4</a> sólo puede ser que $f'(n+1) \in \{f'(\{n+1\}) : y \gt n + 1 \}$.</p>
+                <p>Por el teorema <a href="#T2.5">2.2</a> y <a href="propiedades_basicas.html#T1.1">1.1</a> es cierto que $f'(n+1) \in \{f'(\{n+1\}) : y \gt n + 1 \}$ y, por tanto, $\{f'(\{n+1\}) : y \gt n + 1 \} = \{f'(n+1)\}$ quedando demostrado el teorema.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article id="T2.12" class="theorem">
+          <h3>Teorema 2.12: </h3>
+          <div class="content">
+            <p>Si existe $n + 1 \in \rho_f(n)$ entonces $|\rho_f(n)| = |\rho_f(n + 1)|$</p>
+            <div class="demonstration">
+              <h4>Demostración:</h4>
+              <div class="demonstration-content">
+                <p>Por los teoremas <a href="#T2.1">2.1</a>, <a href="#T2.3">2.3</a> y <a href="#T2.9">2.9</a> $|\rho_f(n)| = |\rho^*_f(n)| + |\{n + 1\}| = |\rho^*_f(n)| + 1$</p>
+                <p>Por los teoremas <a href="#T2.1">2.2</a>, <a href="#T2.3">2.4</a> y <a href="#T2.9">2.11</a> $|\rho_f(n + 1)| = |\rho^*_f(n)| + |\{f'(n + 1)\}| = |\rho^*_f(n)| + 1$</p>
+                <p>Por tanto, queda demostrado el teorema.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article id="T2.13" class="theorem">
+          <h3>Teorema 2.13: </h3>
+          <div class="content">
+            <p>Si $n + 1 \not\in \rho_f(n)$ entonces $0 \le |\rho_f(n + 1)| - |\rho_f(n)| \le 1$</p>
+            <div class="demonstration">
+              <h4>Demostración:</h4>
+              <div class="demonstration-content">
+                <p>Si $n + 1 \not\in \rho_f(n)$ entonces por el <a href="#T2.10">teorema 2.10</a> $\rho_f(n) = \rho^*_f(n) \subset \rho_f(n + 1)$. Quedando demostrada la condición $0 \le |\rho_f(n + 1)| - |\rho_f(n)|$</p>
+                <p>Por los teoremas <a href="#T2.2">2.2</a>, <a href="#T2.4">2.4</a> y <a href="#T2.11">2.11</a> $|\rho_f(n + 1)| = |\rho^*_f(n)| + |\{y \in f'(\{n+1\}) : y \gt n + 1 \}| \le |\rho^*_f(n)| + 1$. Y, como $\rho_f(n) = \rho^*_f(n)$, queda demostrada la condición $|\rho_f(n + 1)| - |\rho_f(n)| \le 1$.</p>
+                <p>Por tanto, queda demostrado el teorema.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article id="T2.14" class="theorem">
+          <h3>Teorema 2.14: Monotonía creciente del número de bolas</h3>
+          <div class="content">
+            <p>Para todo $n \in \Nat$, $|\rho_f(n)| \le |\rho_f(n + 1)|$</p>
+            <div class="demonstration">
+              <h4>Demostración:</h4>
+              <div class="demonstration-content">
+                <p>De los teoremas <a href="#T2.12">2.12</a> y <a href="#T2.13">2.13</a> se deduce la desigualdad del teorema.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+    <script>
+      var p = document.querySelector('.definition p, .theorem p');
+      var width = getComputedStyle(p).width;
+      setTimeout(function () {
+      	  var p = document.querySelectorAll('.definition p, .theorem p');
+        for (var i = 0; i < p.length; ++i) {
+          console.log(p[i].style.width = width + ' !important');
+        }
+      	}, 5000)
+    </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$','$'], ['\\(','\\)']]
+        },
+        TeX: {
+          Macros: {
+            Nat: '\\mathbb{N}',
+            Int: '\\mathbb{Z}',
+            Forall: ['{\\forall \\text{ } #1 \\text{ } (#2)}', 2],
+            Exists: ['{\\exists \\text{ } #1 \\text{ } (#2)}', 2],
+            then: '\\to',
+            and: '\\wedge',
+            emptyset: '\\varnothing'
+          }
+        },
+        MathZoom: {
+          styles: {
+            "#MathJax_Zoom": {
+              overflow: "auto ! important"
+            }
+          }
+        }
+      });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>

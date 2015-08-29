@@ -1,6 +1,8 @@
-article(id="T#{num}")
-  h2 Teorema #{num}:
-  block theorem
-  section
-    h3 Demostración:
-    block demonstration
+article.theorem(id="T#{num}")
+  h3 Teorema #{num}: #{title}
+  .content
+    block theorem
+    .demonstration
+      h4 Demostración:
+      .demonstration-content
+        block demonstration

@@ -1,0 +1,9 @@
+extends ../templates/theorem.jade
+
+block theorem
+  p Si existe $n + 1 \in \rho_f(n)$ entonces $|\rho_f(n)| = |\rho_f(n + 1)|$
+
+block demonstration
+  p Por los teoremas #[a(href="#T2.1") 2.1], #[a(href="#T2.3") 2.3] y #[a(href="#T2.9") 2.9] $|\rho_f(n)| = |\rho^*_f(n)| + |\{n + 1\}| = |\rho^*_f(n)| + 1$
+  p Por los teoremas #[a(href="#T2.1") 2.2], #[a(href="#T2.3") 2.4] y #[a(href="#T2.9") 2.11] $|\rho_f(n + 1)| = |\rho^*_f(n)| + |\{f'(n + 1)\}| = |\rho^*_f(n)| + 1$
+  p Por tanto, queda demostrado el teorema.
