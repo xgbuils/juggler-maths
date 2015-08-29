@@ -27,7 +27,7 @@
         <article id="D2.3" class="definition">
           <h3>Definición 2.3: </h3>
           <div class="content">
-            <p>Como el los siguientes teoremas se hará uso en las demostraciones del conjunto de elementos de $\rho_f(n)$ excepto el elemento $n -1$, vamos a definir la función $\rho^*_f : \Nat \to \mathbb{P}(\Nat)$ tal que $\rho^*_f(n) = \rho_f(n) - \{n - 1\}$.</p>
+            <p>Como en los siguientes teoremas se hará uso en las demostraciones del conjunto de elementos de $\rho_f(n)$ excepto el elemento $n -1$, vamos a definir la función $\rho^*_f : \Nat \to \mathbb{P}(\Nat)$ tal que $\rho^*_f(n) = \rho_f(n) - \{n - 1\}$.</p>
             <p>Por la definición, también puede expresarse $\rho^*_f(n) = \{y \in f'(S_{n+1}) : y \gt n + 1)\}$</p>
           </div>
         </article>
@@ -89,9 +89,9 @@
               <h4>Demostración:</h4>
               <div class="demonstration-content">
                 <p>Por la <a href="#D2.3">definición 2.3</a> $\rho^*_f(n) \subset f'(S_{n+1})$</p>
-                <p>Además $\{y \in f'(\{n+1\}) : y \gt n + 1 \} \subset f'(\{n+1\})$.</p>
+                <p>Además $\{y \in f'(\{n+1\}) : y \gt n + 1 \} \subset \{f'(\{n+1\})\}$.</p>
                 <p>$S_{n+1}$ y $\{n+1\}$ son disjuntos y por la inyectividad de $f'$, $f'(S_{n+1})$ y $f'(\{n+1\})$ también son disjuntos.</p>
-                <p>Por tanto $\rho^*_f(n)$ y $\{y \in f'(\{n+1\}) : y \gt n + 1 \}$ son disjuntos quedando demostrado el teorema.</p>
+                <p>Dado que si dos conjuntos son disjuntos cualquier subconjunto de ellos también son disjuntos, queda demostrado el teorema.</p>
               </div>
             </div>
           </div>
