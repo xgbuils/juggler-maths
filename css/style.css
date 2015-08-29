@@ -1,0 +1,72 @@
+body, html {
+	margin: 0;
+	font-size: 18px;
+	font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+
+	color: #333;
+	word-wrap: break-word;
+}
+
+.header {
+	background-color: #F5F5F5;
+	border-bottom: 1px solid #ddd;
+	padding: .5em 0;
+	margin-bottom: 1em;
+}
+
+.header h1, .content {
+	width: 992px;
+	margin: 0 auto;
+}
+
+.header h1 {
+	font-size: 1.5em;
+}
+
+.main article {
+	box-sizing: border-box;
+    margin: .5em 0;
+
+	background-color: #E9F1F4;
+	border: 1px solid #c7d0d2;
+	border-radius: 5px;
+}
+
+.main h2 {
+	line-height: 1.5em;
+	padding: 0 0.5em;
+	margin: 0;
+
+	border-radius: 5px 5px 0 0;
+
+	background-color: #829AA8;
+	color: #ffffff;
+}
+
+.theorem, .definition {
+	box-sizing: border-box;
+	margin: 1em auto;
+
+	border: 1px solid #ddd;
+	border-radius: .5rem;
+}
+
+.theorem .content, .definition .content {
+	box-sizing: border-box;
+	margin: 0 .5rem;
+}
+
+.theorem .demonstration-content, .definition .demonstration-content {
+	padding: 0 .5rem;
+}
+
+.theorem h2, .definition h2 {
+	
+	padding: 0.5em .5rem .3em;
+    margin: 0;
+
+	border-bottom: 1px solid #ddd;
+	border-radius: .5rem .5rem 0 0;
+
+	background-color: #F7F7F7;
+}
