@@ -83,11 +83,11 @@
             <div class="demonstration-content">
               <p>Demostremos el <em>si</em>:</p>
               <p>Si $f(n) \gt 0$ entonces $f'(n) \gt n$, y entonces $f'(n) \neq n$.</p>
-              <p>Por la <a href="#D1.2">definición 1.2</a> tenemos $f'(f'(n)) \neq f'(n)$</p>
+              <p>Por la inyectividad de $f'$ (<a href="#D1.2">D1.2</a>) tenemos $f'(f'(n)) \neq f'(n)$</p>
               <p>Por el <a href="#T1.1">teorema 1.1</a>, $f'(f'(n)) \gt f'(n)$</p>
               <p>Y por la <a href="#D1.1">definición 1.1</a>, $f(f'(n)) \gt 0$ como queríamos demostrar</p>
               <p>Demostremos ahora el <em>sólo si</em> por reducción al absurdo:</p>
-              <p>Si $f(n) = 0$, entonces por la <a href="#D1.1">definición 1.1</a> $f'(n) = n$.</p>
+              <p>Si $f(n) = 0$, entonces por la definición de función asociada (<a href="#D1.1">D1.1</a>) $f'(n) = n$.</p>
               <p>De manera que $f(f'(n)) = f(n) = 0$ contradiciendo la premisa y quedando demostrado el teorema.</p>
             </div>
           </div>
@@ -96,14 +96,15 @@
       <article id="T1.3" class="theorem">
         <h3>Teorema 1.3: </h3>
         <div class="content">
-          <p>Dado un patrón malabar $f$, $n \in \Nat$ y $m \in \Nat$ tal que $m = f'^{-1}(n)$</p>
-          <p>si $f(n) \gt 0$, entonces $f(f'^{-1}(n)) \gt 0$</p>
+          <p>Dado un patrón malabar $f$, $n \in \Nat$ y existe $m \in \Nat$ tal que $m = f'^{-1}(n)$</p>
+          <p>$f(f'^{-1}(n)) \gt 0$ si y sólo si $f(n) \gt 0$</p>
           <div class="demonstration">
             <h4>Demostración:</h4>
             <div class="demonstration-content">
-              <p>La proposición del teorema también se puede expresar como:</p>
-              <p>Si $f(f'(m)) \gt 0$, entonces $f(m) \gt 0$</p>
-              <p>Esto se corresponde al <em>sólo si</em> del <a href="#T1.2">teorema 1.2</a>. Por tanto queda demostrado.</p>
+              <p>De $m = f'^{-1}(n)$, obtenemos que $n = f'(m)$.</p>
+              <p>De modo que sustituyendo el teorema también se puede expresar de la siguiente forma:</p>
+              <p>$f(m) \gt 0$ si y sólo si $f(f'(m)) \gt 0$</p>
+              <p>Que por <a href="#T1.2">teorema 1.2</a> queda demostrado.</p>
             </div>
           </div>
         </div>
@@ -111,8 +112,8 @@
       <article id="T1.4" class="theorem">
         <h3>Teorema 1.4: </h3>
         <div class="content">
-          <p>Sea $f$ un patrón malabar, $k \in \Int$ y $x \in \Nat$ tal que $f'^k(x) \in \Nat$</p>
-          <p>si $f(n) \gt 0$, entonces $f(f'^k(n)) \gt 0$</p>
+          <p>Sea $f$ un patrón malabar, $k$ y $n \in \Nat$</p>
+          <p>$f(f'^k(n)) \gt 0$ si y sólo si $f(n) \gt 0$</p>
           <div class="demonstration">
             <h4>Demostración:</h4>
             <div class="demonstration-content">
@@ -122,20 +123,27 @@
                 </li>
                 <li>
                   <p>Si $k \gt 0$, cuando $k = 1$ es el <a href="#T1.2">teorema 1.2</a></p>
-                  <p>Vamos a demostrar que si para $k$ es cierto, para $k+1$ también.</p>
-                  <p>Si $f(n) \gt 0$, entonces $f(f'^k(n)) \gt 0$</p>
-                  <p>y si $f(f'^k(n)) \gt 0$, entonces por el <a href="#T1.2">teorema 1.2</a> $f(f'(f'^k(n))) &gt; 0$</p>
+                  <p>Vamos a demostrar que si para $k$ es cierto que $f(f'^k(n)) \gt 0$ si y sólo si $f(n) \gt 0$, para $k + 1$ también.</p>
+                  <p>Por <a href="#T1.2">teorema 1.2</a>, $f(f'(f'^k(n))) \gt 0$ si y sólo si $f(f'^k(n))) \gt 0$.</p>
                   <p>$f(f'(f'^k(n))) = f(f'^{k+1}(n))$, con lo cual queda demostrado para $k \gt 0$.</p>
                 </li>
-                <li>
-                  <p>Si $k \lt 0$ y $f'^k(n) \in \Nat$</p>
-                  <p>Hagamos $m = f'^k(n)$ y, por tanto, $n = f'^{-k}(n)$ tal que $-k \gt 0$</p>
-                  <p>Entonces la proposición del teorema también se puede expresar como:</p>
-                  <p>Si $f(f'^{-k}(m)) \gt 0$, entonces $f(m) \gt 0$</p>
-                  <p>Vamos a demostrar el contrarecíproco suponiendo que $f'(m) = 0$,</p>
-                  <p>Entonces f'(m) = m y, por tanto, $f(f'^{-k}(m)) = f(m) = 0$, quedando demostrado para $k &lt; 0$ y el teorema en su totalidad.</p>
-                </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article id="T1.5" class="theorem">
+        <h3>Teorema 1.5: </h3>
+        <div class="content">
+          <p>Dado un patrón malabar $f$, $k$ y $n \in \Nat$ y existe $m \in \Nat$ tal que $m = f'^{-k}(n)$</p>
+          <p>$f(f'^{-k}(n)) \gt 0$ si y sólo si $f(n) \gt 0$</p>
+          <div class="demonstration">
+            <h4>Demostración:</h4>
+            <div class="demonstration-content">
+              <p>De $m = f'^{-k}(n)$, obtenemos que $n = f'^k(m)$.</p>
+              <p>De modo que, sustituyendo, el teorema también se puede expresar de la siguiente forma:</p>
+              <p>$f(m) \gt 0$ si y sólo si $f(f'^k(m)) \gt 0$</p>
+              <p>Que por el <a href="#T1.2">teorema 1.4</a> queda demostrado.</p>
             </div>
           </div>
         </div>

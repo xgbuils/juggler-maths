@@ -7,9 +7,9 @@ block theorem
 block demonstration
   p Demostremos el #[em si]:
   p Si $f(n) \gt 0$ entonces $f'(n) \gt n$, y entonces $f'(n) \neq n$.
-  p Por la #[a(href="#D1.2") definición 1.2] tenemos $f'(f'(n)) \neq f'(n)$
+  p Por la inyectividad de $f'$ (#[a(href="#D1.2") D1.2]) tenemos $f'(f'(n)) \neq f'(n)$
   p Por el #[a(href="#T1.1") teorema 1.1], $f'(f'(n)) \gt f'(n)$
   p Y por la #[a(href="#D1.1") definición 1.1], $f(f'(n)) \gt 0$ como queríamos demostrar
   p Demostremos ahora el #[em sólo si] por reducción al absurdo:
-  p Si $f(n) = 0$, entonces por la #[a(href="#D1.1") definición 1.1] $f'(n) = n$.
+  p Si $f(n) = 0$, entonces por la definición de función asociada (#[a(href="#D1.1") D1.1]) $f'(n) = n$.
   p De manera que $f(f'(n)) = f(n) = 0$ contradiciendo la premisa y quedando demostrado el teorema.
